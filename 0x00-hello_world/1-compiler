@@ -1,0 +1,2 @@
+#!/bin/bash
+Assembler = gcc  - S  $CFILE
