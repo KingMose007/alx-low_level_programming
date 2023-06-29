@@ -1,19 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int _putchar(char c);
+
 /**
- * print_number - it dey prints an integer
+ * print_int - prints an integer as dem tell me
  * @n: integer to be printed
  *
  * Return: void
  */
-void print_number(int n)
+void print_int(int n)
 {
-	int i, j, div, num;
+	int div, num;
 
 	if (n < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		n = -n;
 	}
 
@@ -25,10 +27,22 @@ void print_number(int n)
 		num /= 10;
 	}
 
-	for (i = div; i >= 1; i /= 10)
+	while (div >= 1)
 	{
-		j = n / i;
-		putchar(j + '0');
-		n -= j * i;
+		_putchar(n / div + '0');
+		n %= div;
+		div /= 10;
 	}
+}
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
 }
