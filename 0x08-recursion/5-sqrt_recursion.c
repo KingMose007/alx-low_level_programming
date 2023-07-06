@@ -13,25 +13,19 @@ int _sqrt_recursion(int n)
 }
 
 /**
- * _sqrt_helper - helper function to find the square root of n
- * @n: the number to calculate the square root of
- * @i: the current number to test as the square root of n
+ * _sqrt - calculates natural square root
+ * @n: number to calculate the square root
+ * @i: iterate number
  *
- * Return: the natural square root of n, or -1 if n does not have a natural
- * square root
+ * Return: the natural square root
  */
-int _sqrt_helper(int n, int i)
+int _sqrt_recursion(int n)
 {
-	if (i * i > n)
-	{
+	int _sqrt(int n, int i)
+		int sqrt = i * i;
+	if (sqrt > n)
 		return (-1);
-	}
-	else if (i * i == n)
-	{
-		return (i);
-	}
-	else
-	{
-		return (_sqrt_helper(n, i + 1));
-	}
+	if (sqrt == n)
+		return (1);
+	return (_sqrt(n, i + 1));
 }
