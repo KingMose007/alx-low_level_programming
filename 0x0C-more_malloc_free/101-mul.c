@@ -4,7 +4,7 @@
 #include <ctype.h>
 
 /**
- * is_number - checks if a string has only digits
+ * is_number - checks if a string contains digit only
  * @str: string to check
  *
  * Return: 1 if str contains only digits, 0 otherwise
@@ -23,7 +23,7 @@ int is_number(char *str)
 }
 
 /**
- * main - code that multiplies two positive numbers
+ * main - multiplies two positive numbers
  * @argc: number of arguments
  * @argv: array of arguments
  *
@@ -32,6 +32,7 @@ int is_number(char *str)
 int main(int argc, char *argv[])
 {
 	long int num1, num2, result;
+	char *endptr;
 
 	if (argc != 3)
 	{
@@ -45,8 +46,8 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[2]);
+	num1 = strtol(argv[1], &endptr, 10);
+	num2 = strtol(argv[2], &endptr, 10);
 	result = num1 * num2;
 
 	printf("%ld\n", result);
