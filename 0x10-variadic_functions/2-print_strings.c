@@ -4,9 +4,9 @@
 
 /**
  * print_strings - a code that prints strings followed by a new line
- * @separator: The string to be printed between the strings
- * @n: The number of strings passed to the function
- * @...: Variable number of string arguments
+ * @separator: string to be printed between the strings
+ * @n: number of strings passed to the function
+ * @...: variable number of string arguments
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
@@ -29,7 +29,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("%s", separator);
 	}
 
-	printf("n");
+	printf("\n");
 
 	va_end(args);
 }
