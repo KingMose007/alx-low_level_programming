@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * add_nodeint - a code that adds a new node at the beginning of a listint_t list
+ * add_nodeint - code adds a new node at the beginning of a listint_t list
  * @head: double pointer to the head of the list
  * @n: data for the new node
  *
