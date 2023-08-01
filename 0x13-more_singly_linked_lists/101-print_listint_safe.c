@@ -1,6 +1,5 @@
-#include "lists.h"
 #include <stdio.h>
-#include <stdlib.h>
+#include "lists.h"
 
 /**
  * print_listint_safe - the code prints a listint_t linked list
@@ -19,7 +18,7 @@ size_t print_listint_safe(const listint_t *head)
 	slow = head;
 	fast = head;
 
-	while (slow != NULL && fast != NULL && fast->next != NULL)
+	while (slow && fast && fast->next)
 	{
 		slow = slow->next;
 		fast = fast->next->next;
@@ -27,7 +26,7 @@ size_t print_listint_safe(const listint_t *head)
 		if (slow == fast)
 		{
 			printf("-> [%p] %d\n", (void *)slow, slow->n);
-			exit(98);
+			return (count);
 		}
 	}
 
